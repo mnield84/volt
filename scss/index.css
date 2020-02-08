@@ -1,0 +1,339 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+  /* Sets up the Base 10 stuff */
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 30px 0;
+}
+
+@media (min-width: 992px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+.title {
+  font-size: 25px;
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 7px;
+  display: inline-block;
+}
+
+.subtitle:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 1px;
+  display: block;
+  background: #ea0c79;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+@media (min-width: 992px) {
+  .subtitle:after {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+p {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+p.large {
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+a {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+a.btn {
+  background: #ea0c79;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+a.btn:hover {
+  background: rgba(234, 12, 121, 0.7);
+}
+
+a.btn.blue {
+  background: #0000fa;
+}
+
+.image {
+  width: 100%;
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+}
+
+.textimage .grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+}
+
+.textimage .grid .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .textimage .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .textimage .grid .text {
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.features {
+  border-top: 1px solid #d9d9d9;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.features .title {
+  text-align: center;
+}
+
+.features .slider {
+  margin: 70px 0;
+}
+
+.features .slider .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features .slider .item .text {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.features .slider .item .text p {
+  padding: 30px 0;
+}
+
+.features:before {
+  content: " ";
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #0000fa;
+}
+
+.features a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  justify-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=index.css.map */

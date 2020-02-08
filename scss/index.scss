@@ -1,0 +1,176 @@
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap");
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+// Screen sizes - breakpoints for media queries
+$screen-xxs: 360px;
+$screen-xs: 500px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1230px;
+$screen-xl: 1460px;
+$screen-xx: 2000px;
+
+$ff: "Montserrat", sans-serif;
+
+$hotpink: #ea0c79;
+$voltBlue: #0000fa;
+$hotpinkHover: rgba(#ea0c79, 0.7);
+$black: #000;
+$white: #fff;
+$dividerGrey: #d9d9d9;
+
+$padding-sm: 30px 0;
+$padding-lg: 60px 0;
+
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+.container{
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+section{
+  padding: $padding-sm;
+  @media (min-width: $screen-md) {
+    padding: $padding-lg;
+  }
+}
+
+.title {
+  @include font-size(2.5);
+  font-family: $ff;
+  font-weight: 600;
+}
+
+.subtitle {
+  @include font-size(1.6);
+  font-family: $ff;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 7px;
+  display: inline-block;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 1px;
+    display: block;
+    background: $hotpink;
+    transform: translateX(50%);
+  }
+  @media (min-width: $screen-md) {
+    &:after {
+      transform: none;
+    }
+  }
+}
+
+p {
+  @include font-size(1.6);
+  font-family: $ff;
+  &.large {
+    @include font-size(2);
+  }
+}
+
+a {
+  @include font-size(1.6);
+  font-family: $ff;
+  color: $black;
+  display: inline-flex;
+  &.btn {
+    background: $hotpink;
+    color: $white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+    border-radius: 5px;
+    &:hover {
+      background: $hotpinkHover;
+    }
+    &.blue{
+      background: $voltBlue;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
+.textimage {
+  .grid {
+    display: grid;
+    grid-gap: 30px;
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  @media (min-width: $screen-md) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      .text {
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+.features {
+  border-top: 1px solid $dividerGrey;
+  position: relative;
+  box-sizing: border-box;
+  .title{
+    text-align: center;
+  }
+  .slider{
+    margin: 70px 0;
+    .item{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .text{
+        margin-top: 30px;
+        text-align: center;
+        p{
+          padding: 30px 0;
+        }
+      }
+    }
+  }
+  &:before {
+    content: " ";
+    width: 50px;
+    height: 1px;
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $voltBlue;
+  }
+  a{
+    display: inline-flex;
+    justify-self: center;
+    align-self: center;
+  }
+}
