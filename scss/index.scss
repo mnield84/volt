@@ -26,6 +26,8 @@ $dividerGrey: #d9d9d9;
 
 $padding-sm: 30px 0;
 $padding-lg: 60px 0;
+$title-margin: 30px 0;
+
 
 html {
   font-size: 62.5%; /* Sets up the Base 10 stuff */
@@ -43,10 +45,15 @@ section{
   }
 }
 
+h1,h2,h3,h4,h5{
+  font-family: $ff;
+}
+
 .title {
   @include font-size(2.5);
   font-family: $ff;
   font-weight: 600;
+  margin: $title-margin;
 }
 
 .subtitle {
@@ -76,6 +83,7 @@ section{
 p {
   @include font-size(1.6);
   font-family: $ff;
+  margin-bottom: 30px;
   &.large {
     @include font-size(2);
   }
@@ -177,6 +185,30 @@ a {
   }
 }
 
+.pricing{
+  padding: 125px 0;
+  position: relative;
+  img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 100%;
+  }
+  .content{
+    position: relative;
+    z-index: 2;
+  }
+  @media (min-width: $screen-md) {
+    padding: 300px 0;
+    .content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
 .testimonials {
   border-top: 1px solid $dividerGrey;
   position: relative;
@@ -236,6 +268,39 @@ a {
       a {
         margin-top: 60px;
       }
+    }
+  }
+}
+
+.pricing-slider{
+  .slider{
+    .item{
+      h2{
+        @include font-size(5);
+        font-weight: bold;
+        background: linear-gradient(to right, #0000fa 0%, #ea1780 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+
+footer {
+  .footer-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  .footer-lower {
+    width: 100%;
+    display: flex;
+    .left,
+    .right {
+      flex: 1;
+    }
+    .terms {
+      display: flex;
     }
   }
 }
